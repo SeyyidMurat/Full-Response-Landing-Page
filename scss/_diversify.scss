@@ -1,0 +1,48 @@
+.diversify {
+  &__wrapper {
+    background: $primary-color;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    @include breakpoint-up(large) {
+      grid-template-columns: 1fr 1fr;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    @include breakpoint-up(large) {
+      padding-left: 90px;
+      padding-right: 90px;
+    }
+  }
+
+  &__description {
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    @include breakpoint-up(medium) {
+      align-items: flex-start;
+    }
+
+    h2,
+    p {
+      color: #fff;
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 3vw, 2rem);
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+  }
+
+  &__img {
+    padding-top: 50px;
+  }
+}

@@ -1,0 +1,23 @@
+.portfolio {
+  padding-top: 157px;
+  padding-bottom: 173px;
+
+  &__title {
+    color: $primary-color;
+    font-weight: 700;
+    margin-bottom: 3.75rem;
+  }
+
+  &__subtitle {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    max-width: 577px;
+    margin-bottom: 5.875rem;
+    line-height: 1.5;
+  }
+
+  &__column {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+    gap: 5.625rem;
+  }
+}

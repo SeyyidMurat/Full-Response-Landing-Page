@@ -1,0 +1,159 @@
+.signup {
+  &__logo {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  &__wrapper {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(1rem, 1fr) minmax(auto, 500px) minmax(
+        1rem,
+        1fr
+      );
+
+    @include breakpoint-up(xlarge) {
+      grid-template-columns:
+        minmax(1rem, 5rem) minmax(auto, 500px) minmax(1rem, 5rem)
+        3fr;
+    }
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2 / 3;
+    @include breakpoint-up(xlarge) {
+      grid-column: 2 / 3;
+    }
+  }
+
+  &__input {
+    margin-bottom: 2em;
+  }
+
+  &__label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+  }
+
+  &__control {
+    display: block;
+    width: 100%;
+    padding: 1em;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+    outline: none;
+    line-height: 1.5;
+    font-size: 1rem;
+    transition: border-color 150ms ease-in-out, box-shadow 150ms ease-in-out;
+
+    &:focus {
+      border: 1px solid $primary-color;
+      box-shadow: 0 0 0 0.15rem rgba($primary-color, 0.25);
+    }
+  }
+
+  &__password {
+    position: relative;
+    margin-bottom: 2rem;
+    .hide-btn {
+      position: absolute;
+      top: 30px;
+      right: -9px;
+      background: transparent;
+      box-shadow: none;
+
+      img {
+        transition: transform 150ms ease-in-out;
+
+        &:hover,
+        &:focus {
+          transform: scale(0.8);
+        }
+      }
+    }
+  }
+
+  &__check {
+    display: block;
+    margin-bottom: 2em;
+    font-weight: 500;
+    span {
+      color: $primary-color;
+      font-weight: 700;
+    }
+  }
+
+  &__text {
+    margin-top: 1.5em;
+    font-weight: 400;
+    a {
+      color: $primary-color;
+      font-weight: 700;
+    }
+  }
+
+  &__banner {
+    display: none;
+    padding: 4rem 4rem 0;
+    @include breakpoint-up(xlarge) {
+      grid-column: 4 / 5;
+      display: grid;
+      grid-template-columns: minmax(1rem, 5rem) minmax(600px, 1fr) minmax(
+          1rem,
+          5rem
+        );
+      grid-template-rows: repeat(2, 1fr);
+      height: 100%;
+      background: $primary-color;
+    }
+
+    &-img {
+      height: 500px;
+      grid-column: 2 / 3;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 0.5rem;
+      }
+    }
+
+    &-content {
+      color: $white-color;
+      grid-column: 2 / 3;
+      justify-self: center;
+      text-align: center;
+      margin-top: 3rem;
+
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .pagination {
+        margin-top: 4rem;
+        span {
+          display: inline-block;
+          width: 15px;
+          height: 15px;
+          background: $white-color;
+          border-radius: 50%;
+
+          &:not(:first-of-type) {
+            background: rgba(0, 0, 0, 0.3);
+          }
+        }
+      }
+    }
+  }
+}

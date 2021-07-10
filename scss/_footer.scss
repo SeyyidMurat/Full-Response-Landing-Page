@@ -1,0 +1,32 @@
+.footer {
+  background: $heroBackground;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: minmax(250px, 270px);
+    gap: 2rem;
+
+    @include breakpoint-up(large) {
+      grid-template-columns: minmax(260px, 350px) repeat(4, 1fr);
+      justify-items: flex-end;
+    }
+  }
+
+  &__column {
+    line-height: 2.5;
+
+    h4 {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__link {
+    transition: all 150ms ease-in-out;
+    &:hover {
+      color: rgba(0, 0, 0, 0.8);
+      text-decoration: underline;
+    }
+  }
+}
